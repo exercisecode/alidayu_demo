@@ -105,6 +105,19 @@
 
 ```  
 
+查询异常返回值(来源官方文档)  
+
+```  
+{
+    "error_response": {
+        "code": 50,
+        "msg": "Remote service error",
+        "sub_code": "isv.invalid-parameter",
+        "sub_msg": "非法参数"
+    }
+}
+
+```  
 
 
 
