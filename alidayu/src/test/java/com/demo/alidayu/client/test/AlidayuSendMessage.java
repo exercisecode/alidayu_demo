@@ -24,6 +24,7 @@ public class AlidayuSendMessage {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		/// send message
 		String serverUrl = AlidayuConfig.url;
 		String appKey = AlidayuConfig.AppKey;
 		String appSecret = AlidayuConfig.AppSecret;
@@ -32,12 +33,19 @@ public class AlidayuSendMessage {
 		System.out.println("client: " + client);
 
 		AlibabaAliqinFcSmsNumSendRequest req = new AlibabaAliqinFcSmsNumSendRequest();
-		req.setExtend("ex");
+		Map<String, String> extendMap = new HashMap<String, String>();
+		extendMap.put("requestId", String.valueOf(System.currentTimeMillis()));
+		extendMap.put("phoneNumber", AlidayuConfig.recNum);
+		
+		req.setExtend(new JSONObject(extendMap).toString());
 		req.setSmsType("normal");
 		req.setSmsFreeSignName(AlidayuConfig.smsFreeSignName);
 
 		Map<String, String> paramMap = new HashMap<String, String>();
-		paramMap.put("customer", AlidayuConfig.Customer);
+		//paramMap.put("customer", AlidayuConfig.Customer);
+		
+		paramMap.put("product", "演示项目");
+		paramMap.put("code", "123456");
 
 		JSONObject paramJson = new JSONObject(paramMap);
 		req.setSmsParamString(paramJson.toString());
@@ -52,6 +60,15 @@ public class AlidayuSendMessage {
 		} catch (ApiException e) {
 			e.printStackTrace();
 		}
+		
+		// {"alibaba_aliqin_fc_sms_num_send_response":{"result":{"err_code":"0","model":"101995153795^1102618458965","success":true},"request_id":"qm4co0vj1zv1"}}
+	
+		// {"alibaba_aliqin_fc_sms_num_send_response":{"result":{"err_code":"0","model":"101995524903^1102618894194","success":true},"request_id":"101z16vhfagi2"}}
+
+		// {"alibaba_aliqin_fc_sms_num_send_response":{"result":{"err_code":"0","model":"101995642392^1102619126164","success":true},"request_id":"14pdchcxzaj03"}}
+
+		// request_id (64) , error_code (16), model (64), success (16)
+		
 
 	}
 

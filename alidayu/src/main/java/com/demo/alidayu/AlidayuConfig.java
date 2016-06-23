@@ -16,6 +16,7 @@ public class AlidayuConfig {
     
     public static final String Customer = "";
     public static final String recNum = "";
+   
     public static final String SmsTemplateCode = "";
     
     
