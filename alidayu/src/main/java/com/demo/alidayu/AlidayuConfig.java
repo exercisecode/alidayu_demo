@@ -14,7 +14,7 @@ public class AlidayuConfig {
     
     public static final String smsFreeSignName = "";
     
-    public static final String Customer = "达人一枚";
+    public static final String Customer = "";
     public static final String recNum = "";
     public static final String SmsTemplateCode = "";
     

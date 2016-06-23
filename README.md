@@ -14,3 +14,7 @@ alidayu demo.
 
 [Taobao SDK](http://mvnrepo.tae.taobao.com/content/groups/public/com/taobao/sdk)  
 
+
+[编码错误自查工具](https://open.taobao.com/apitools/errorCodeSearch?spm=a219a.7395905.0.0.2801pI)  
+
+
